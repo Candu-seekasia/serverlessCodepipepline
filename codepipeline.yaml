@@ -14,3 +14,16 @@ Resources:
           Properties:
             Path: /time
             Method: GET
+
+  TestFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: test.handler
+      Runtime: nodejs4.3
+      CodeUri: ./
+      Events:
+        MyTimeApi:
+          Type: Api
+          Properties:
+            Path: /test
+            Method: GET
