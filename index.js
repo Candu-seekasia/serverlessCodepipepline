@@ -2,16 +2,15 @@
 console.log('CodePipeline sample');
 
 var time = require('time');
-var sql = require("mssql");
-var config = {
-        user: 'sqlCFSWebAppHK',
-        password: 'O7nRxZLrWUTT8nlI2yYB',
-        server: '10.90.10.76', 
-        database: 'JobsDB_System' 
-    };
+ var sql = require("mssql");
 
 exports.handler = (event, context, callback) => {
-	
+	 var config = {
+        user: '',
+        password: '',
+        server: '', 
+        database: '' 
+    };
 
 	var currentTime = new time.Date();
 	currentTime.setTimezone("America/Los_Angeles");
@@ -24,10 +23,7 @@ exports.handler = (event, context, callback) => {
        // connect to your database
     sql.connect(config, function (err) {
     
-        if (err) {
-        		console.log('DB:'+err);
-        		return callback(err)
-    	}
+        if (err) console.log(err);
 
         // create Request object
         var request = new sql.Request();
