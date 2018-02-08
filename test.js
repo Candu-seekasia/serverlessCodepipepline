@@ -6,7 +6,7 @@ exports.handler = (event, context, callback) => {
     console.log("debug",process.env.DEBUGE+""); 
     var response = {
         statusCode: 200,
-        body: JSON.stringify("test "+event.name)
+        body: JSON.stringify("test "+event.queryStringParameters.name)
     };
     callback(null, response);
 
