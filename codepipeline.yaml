@@ -20,6 +20,10 @@ Resources:
     Properties:
       Handler: test.handler
       Runtime: nodejs4.3
+      Environment:
+        Variables:
+          ISPRODUCTION: "0"
+          DEBUGE: "0"
       CodeUri: ./
       Events:
         MyTimeApi:
